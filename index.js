@@ -9,9 +9,35 @@ const server = http.createServer((req, res) => {
     const path = req.url;
     const method = req.method;
 
+if (method === "GET"){
+    if (path === "gimmeburrito"){
+        //getById
+    }
+    else if (path === "gimmeburritos"){
+        //getAll
+    }
+    else{
+        //404
+    }
+}
 
+else if (method === "POST"){
+    if (path === "makeburrito"){
+        //makeMeABurrito
+    }
+    else{
+        //404
+    }
+}
 
+else if (method === "PUT"){
+    if (path === "canichangemyburrito"){
 
+    }
+    else{
+        //404
+    }
+}
 
 
 
