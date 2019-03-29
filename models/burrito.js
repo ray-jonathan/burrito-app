@@ -7,6 +7,9 @@ class Burrito {
         this.fillings = fillings;
         this.style = style;
     }
+    static getAll(){
+        return db.any(`select * from burritos`);
+    }
     static getById(id){
         return db.one(`select * from burritos where id = $1`, [id])
             .then( (burritoData) => {
