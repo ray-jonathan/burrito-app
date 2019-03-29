@@ -1,0 +1,28 @@
+{
+  "name": "burrito-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "db:create": "createdb burrito-app",
+    "db:init": "psql -f schema.sql burrito-app && psql -f seed.sql burrito-app",
+    "db:destroy": "dropdb burrito-app",
+    "db:reset": "npm run db:destroy; npm run db:create && npm run db:init",
+    "test": "mocha",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test:watch": "mocha -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^6.0.2",
+    "nodemon": "^1.18.10"
+  },
+  "dependencies": {
+    "pg-promise": "^8.6.4"
+  }
+}
